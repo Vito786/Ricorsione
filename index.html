@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function primiNNumeri(){
+            var n;
+            do{
+            }while(!(n = +prompt("Quanti numeri vuoi sommare?")));
+            var somma = 0;
+            for(var i=1;i<=n;i++){
+                somma+=i;
+            }
+            document.getElementById("nNumeri").innerText = "La somma dei primi " + n + " numeri è : " + somma;
+        }
+
+        function trovaMinArray(){
+            var size;
+            var min=Infinity;
+            var numeri = new Array();
+            do{
+            }while(!(size = +prompt("Inserire grandezza array: ")));
+            for(var i=0;i<size;i++){
+                do{
+                }while(!(numeri[i] = +prompt("Inserire numero: ")));
+                if(min>numeri[i]) min = numeri[i];
+            }
+            document.getElementById("MinArray").innerText = "Il numero minimo dell'array è: " + min;
+        }
+
+        function trovaMaxArray(){
+            var size;
+            var min=0;
+            var numeri = new Array();
+            do{
+            }while(!(size = +prompt("Inserire grandezza array: ")));
+            for(var i=0;i<size;i++){
+                do{
+                }while(!(numeri[i] = +prompt("Inserire numero: ")));
+                if(min<numeri[i]) min = numeri[i];
+            }
+            document.getElementById("MaxArray").innerText = "Il numero massimo dell'array è: " + min;
+        }
+
+        function sommaArray(){
+            var size;
+            var somma=0;
+            var numeri = new Array();
+            do{
+            }while(!(size = +prompt("Inserire grandezza array: ")));
+            for(var i=0;i<size;i++){
+                do{
+                }while(!(numeri[i] = +prompt("Inserire numero: ")));
+                somma+=numeri[i]
+            }
+            document.getElementById("sommaArray").innerText = "La somma dei numeri dell'array è: " + somma;
+        }
+
+        function prodottoArray(){
+            var size;
+            var prodotto=1;
+            var numeri = new Array();
+            do{
+            }while(!(size = +prompt("Inserire grandezza array: ")));
+            for(var i=0;i<size;i++){
+                do{
+                }while(!(numeri[i] = +prompt("Inserire numero: ")));
+                prodotto*=numeri[i]
+            }
+            document.getElementById("prodottoArray").innerText = "Il prodotto dei numeri dell'array è: " + prodotto;
+        }
+
+        function palindroma(){
+            var parola = prompt("Inserire la parola: ").toLowerCase();
+            var checkParola = parola.split("").reverse();
+            checkParola = checkParola.join("")
+            if(parola === checkParola){
+                document.getElementById("palindroma").innerText = "La frase è palindroma";
+            }else{
+                document.getElementById("palindroma").innerText = "La frase non è palindroma";
+            }
+        }
+    </script>
+    <button onclick="primiNNumeri();">Somma i primi N numeri</button>
+    <p id="nNumeri"></p>
+    <button onclick="trovaMinArray();">Trova il numero minimo di un array</button>
+    <p id="MinArray"></p>
+    <button onclick="trovaMaxArray();">Trova il numero minimo di un array</button>
+    <p id="MaxArray"></p>
+    <button onclick="sommaArray();">Somma degli elementi di un array</button>
+    <p id="sommaArray"></p>
+    <button onclick="prodottoArray();">Prodotto degli elementi di un array</button>
+    <p id="prodottoArray"></p>
+    <button onclick="palindroma();">Controlla se una parola è palindroma</button>
+    <p id="palindroma"></p>
+</body>
+</html>
